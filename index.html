@@ -304,28 +304,44 @@ No Gym. No Supplements.
 <p class="sub">Real Effort Creates Real Transformation.</p>
 
 <div class="card">
-<form style="display:grid;gap:18px">
-<input type="text" placeholder="FULL NAME" style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff">
-<input type="number" placeholder="AGE" style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff">
-<input type="text" placeholder="LOCATION IN HYDERABAD" style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff">
-<select style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff">
-    <option>🏆 SELECT YOUR PLAN</option>
-    <option>🥇 Premium 1-on-1 — ₹9,999</option>
-    <option>👥 Couple / Buddy Plan — ₹14,999</option>
-    <option>🏠 Family Health Plan — ₹19,999</option>
+<form onsubmit="sendToWhatsApp(event)" style="display:grid;gap:18px">
+
+<input type="text" id="name" placeholder="FULL NAME"
+style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff">
+
+<input type="number" id="age" placeholder="AGE"
+style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff">
+
+<input type="text" id="location" placeholder="LOCATION IN HYDERABAD"
+style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff">
+
+<select id="plan"
+style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff">
+<option value="">🏆 SELECT YOUR PLAN</option>
+<option>🥇 Premium 1-on-1 — ₹9,999</option>
+<option>👥 Couple / Buddy Plan — ₹14,999</option>
+<option>🏠 Family Health Plan — ₹19,999</option>
 </select>
 
-<select style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff">
-    <option>💳 SELECT PAYMENT METHOD</option>
-    <option>📱 UPI / PhonePe</option>
-    <option>💳 Debit / Credit Card</option>
-    <option>🏦 Bank Transfer</option>
+<select id="payment"
+style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff">
+<option value="">💳 SELECT PAYMENT METHOD</option>
+<option>📱 UPI / PhonePe</option>
+<option>💳 Debit / Credit Card</option>
+<option>🏦 Bank Transfer</option>
 </select>
 
-<textarea placeholder="FITNESS GOALS" rows="6" style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff"></textarea>
-<button type="submit" style="padding:18px;border:none;border-radius:12px;background:#22c55e;color:#fff;font-size:18px;font-weight:700">✅ APPLY NOW — SUBMIT</button>
+<textarea id="goal" placeholder="FITNESS GOALS" rows="6"
+style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff"></textarea>
+
+<button type="submit"
+style="padding:18px;border:none;border-radius:12px;background:#22c55e;color:#fff;font-size:18px;font-weight:700">
+✅ APPLY NOW — SUBMIT
+</button>
+
 </form>
 </div>
+
 
 </section>
 
@@ -392,6 +408,32 @@ document.getElementById('mainTitle').innerHTML='No Gym. No Supplements. <span st
 document.getElementById('mainText').innerHTML='Natural transformation through discipline, home training, and consistency.';
 }
 </script>
+<script>
+function sendToWhatsApp(event){
+event.preventDefault();
 
+let name = document.getElementById("name").value;
+let age = document.getElementById("age").value;
+let location = document.getElementById("location").value;
+let plan = document.getElementById("plan").value;
+let payment = document.getElementById("payment").value;
+let goal = document.getElementById("goal").value;
+
+let message =
+"🏋️ HOME NATURAL FITNESS ENQUIRY\n\n" +
+"👤 Name: " + name + "\n" +
+"🎂 Age: " + age + "\n" +
+"📍 Location: " + location + "\n" +
+"🏆 Plan: " + plan + "\n" +
+"💳 Payment Method: " + payment + "\n" +
+"🎯 Goal: " + goal;
+
+window.open(
+"https://wa.me/918074032389?text=" +
+encodeURIComponent(message),
+"_blank"
+);
+}
+</script>
 </body>
 </html>
