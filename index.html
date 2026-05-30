@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+                                                      <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -11,7 +11,49 @@ body{background:#07110c;color:#fff;line-height:1.7}
 section{padding:90px 8%}
 header{position:fixed;top:0;width:100%;z-index:999;background:rgba(0,0,0,.7);backdrop-filter:blur(10px);padding:18px 8%;border-bottom:1px solid rgba(255,255,255,.08)}
 nav{display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:30px;font-weight:800;color:#22c55e}
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo img{
+width:60px;
+height:60px;
+object-fit:cover;
+border-radius:50%;
+border:2px solid #22c55e;
+box-shadow:0 0 20px rgba(34,197,94,.4);
+}
+
+.logo-text span{
+font-size:28px;
+font-weight:800;
+color:#22c55e;
+}
+
+.hero-logo{
+width:180px;
+height:180px;
+object-fit:cover;
+border-radius:50%;
+border:4px solid #22c55e;
+box-shadow:0 0 35px rgba(34,197,94,.5);
+margin-bottom:25px;
+}
+.logo img{
+width:45px;
+height:45px;
+}
+
+.logo-text span{
+font-size:18px;
+}
+
+.hero-logo{
+width:120px;
+height:120px;
+}
 nav a{color:#fff;text-decoration:none;margin-left:22px;font-weight:500}
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.8)),url('WhatsApp Image 2026-05-23 at 20.54.49.jpeg') center/cover}
 .hero-content{max-width:950px}
@@ -43,27 +85,13 @@ nav a{color:#fff;text-decoration:none;margin-left:22px;font-weight:500}
 footer{padding:60px 8%;background:#020503;text-align:center;border-top:1px solid rgba(255,255,255,.08)}
 .lang{position:fixed;right:20px;top:90px;z-index:999;display:flex;gap:10px}
 .lang button{padding:10px 16px;border:none;border-radius:10px;font-weight:700;cursor:pointer}
+
 .mobile-menu-btn{display:none;background:#22c55e;color:#fff;border:none;padding:10px 14px;border-radius:10px;font-weight:700}
 .payment-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px;margin-top:40px}
 .payment-card{background:#101915;padding:30px;border-radius:22px;border:1px solid rgba(255,255,255,.08);text-align:center}
 .payment-card h3{color:#22c55e;margin-bottom:12px}
 .qr-box{background:#fff;color:#000;padding:20px;border-radius:18px;font-weight:700;margin-top:15px}
-
-/* Service Area Map Style */
-.service-area-wrap{position:relative;max-width:700px;margin:0 auto;text-align:center}
-.service-area-map{background:#101915;border-radius:24px;border:1px solid rgba(34,197,94,.25);padding:50px 30px;position:relative;overflow:hidden}
-.service-area-map::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:340px;height:340px;border-radius:50%;border:2px dashed rgba(34,197,94,.3);animation:pulse-ring 3s ease-in-out infinite}
-.service-area-map::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:200px;height:200px;border-radius:50%;border:2px dashed rgba(34,197,94,.2);animation:pulse-ring 3s ease-in-out infinite .8s}
-@keyframes pulse-ring{0%,100%{opacity:.4;transform:translate(-50%,-50%) scale(1)}50%{opacity:.8;transform:translate(-50%,-50%) scale(1.04)}}
-.center-pin{position:relative;z-index:2}
-.center-pin .pin-icon{font-size:52px;display:block;margin-bottom:10px;filter:drop-shadow(0 0 18px #22c55e)}
-.center-pin h3{font-size:26px;font-weight:800;color:#22c55e}
-.center-pin p{color:#cbd5e1;font-size:15px;margin-top:6px}
-.radius-badge{display:inline-block;background:rgba(34,197,94,.15);border:1px solid #22c55e;color:#22c55e;padding:10px 26px;border-radius:30px;font-weight:700;font-size:15px;margin-top:20px}
-.area-tags{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:35px}
-.area-tag{background:#101915;border:1px solid rgba(34,197,94,.3);padding:10px 18px;border-radius:50px;font-size:14px;font-weight:600;color:#d1fae5;transition:.2s}
-.area-tag:hover{background:rgba(34,197,94,.15);border-color:#22c55e}
-
+.contact-flex{display:grid;grid-template-columns:1fr 1fr;gap:30px}
 @media(max-width:768px){
 .hero h1{font-size:42px}
 .hero p{font-size:17px}
@@ -74,9 +102,11 @@ nav .menu{display:none;width:100%;flex-direction:column;background:#101915;paddi
 nav .menu.show{display:flex}
 nav .menu a{margin:10px 0}
 .gallery img,.gallery video{height:360px}
+.contact-flex{grid-template-columns:1fr}
 .title{font-size:34px}
 .plan h2{font-size:34px}
 }
+
 </style>
 </head>
 <body>
@@ -88,9 +118,13 @@ nav .menu a{margin:10px 0}
 
 <header>
 <nav>
-<div class="logo">HOME NATURAL FITNESS</div>
-<button class="mobile-menu-btn" onclick="toggleMenu()">☰ Menu</button>
-<div class="menu" id="menu">
+<div class="logo">
+    <img src="home-natural-fitness-logo.png" alt="Home Natural Fitness Logo">
+    <div class="logo-text">
+        <span>HOME NATURAL FITNESS</span>
+    </div>
+</div>
+<button class="mobile-menu-btn" onclick="toggleMenu()">☰ Menu</button><div class="menu" id="menu">
 <a href="#about">About</a>
 <a href="#plans">Plans</a>
 <a href="#results">Results</a>
@@ -101,12 +135,22 @@ nav .menu a{margin:10px 0}
 
 <section class="hero">
 <div class="hero-content">
-<h1 id="mainTitle">No Gym. No Supplements. <span>Real Results.</span></h1>
+
+<img src="home-natural-fitness-logo.png"
+     alt="Home Natural Fitness Logo"
+     class="hero-logo">
+
+<h1 id="mainTitle">
+No Gym. No Supplements.
+<span>Real Results.</span>
+</h1>
 <p id="mainText">"జిమ్ మీద ఆధారపడకుండా… అనవసరమైన సప్లిమెంట్స్ లేకుండా… నిజమైన క్రమశిక్షణతో ఫిట్‌నెస్ మార్పు."</p>
+
 <div class="btns">
 <a href="https://wa.me/918074032389" target="_blank" class="btn primary">🔥 BOOK MY PAID TRIAL SESSION</a>
 <a href="https://wa.me/918074032389" target="_blank" class="btn secondary">💬 WHATSAPP COACH KOTI</a>
 </div>
+
 <div class="grid features">
 <div class="card"><h3>WEIGHT LOSS</h3><p>Natural fat reduction through discipline and consistency.</p></div>
 <div class="card"><h3>MUSCLE BUILDING</h3><p>Build strength naturally without shortcuts.</p></div>
@@ -128,14 +172,16 @@ nav .menu a{margin:10px 0}
 <section id="about">
 <h2 class="title">ABOUT COACH KOTI</h2>
 <p class="sub">15 Years of Ground Reality Is My Real Certification</p>
+
 <div class="grid gallery">
 <img src="WhatsApp Image 2026-05-23 at 20.54.49.jpeg">
 <img src="WhatsApp Image 2026-05-23 at 20.55.39.jpeg">
 <img src="WhatsApp Image 2026-05-23 at 20.55.40.jpeg">
 </div>
+
 <div class="card" style="margin-top:40px">
 <h3 style="font-size:34px">Kancheti Koteswara Rao Naidu</h3>
-<p style="color:#22c55e;font-weight:700">🌿 NATURAL FITNESS COACH · SINCE 2012</p>
+<p style="color:#22c55e;font-weight:700">🌿 NATURAL FITNESS COACH · SINCE 2010</p>
 <br>
 <p>My journey began not in a certification classroom, but on the ground — 15 years of real-world fitness experience working with real people, solving real problems.</p>
 <br>
@@ -160,6 +206,7 @@ nav .menu a{margin:10px 0}
 <section id="plans">
 <h2 class="title">Choose Your Transformation Plan</h2>
 <p class="sub">Three plans. All 100% natural. Trial session fee fully adjustable into your first monthly payment.</p>
+
 <div class="grid plans">
 <div class="plan">
 <h3>🥇 Premium 1-on-1</h3>
@@ -175,6 +222,7 @@ nav .menu a{margin:10px 0}
 </ul>
 <a href="https://wa.me/918074032389" class="btn primary">BOOK TRIAL</a>
 </div>
+
 <div class="plan">
 <div class="best">BEST VALUE</div>
 <h3>👥 Couple / Buddy Plan</h3>
@@ -190,6 +238,7 @@ nav .menu a{margin:10px 0}
 </ul>
 <a href="https://wa.me/918074032389" class="btn primary">BOOK TRIAL</a>
 </div>
+
 <div class="plan">
 <h3>🏠 Family Health Plan</h3>
 <p>Keep the entire household healthy together</p>
@@ -210,72 +259,66 @@ nav .menu a{margin:10px 0}
 <section id="results">
 <h2 class="title">REAL RESULTS</h2>
 <p class="sub">What Clients Say About Coach Koti</p>
+
 <div class="grid plans">
 <div class="review">
 <h3>⭐⭐⭐⭐⭐</h3>
 <p>"I lost 14 kg in 4 months — completely naturally. No supplements, no gym membership."</p>
-<br><b>Ravi Kumar · Kondapur</b>
+<br>
+<b>Ravi Kumar · Kondapur</b>
 </div>
+
 <div class="review">
 <h3>⭐⭐⭐⭐⭐</h3>
 <p>"Koti garu trained me at 6 AM at home. My stamina and confidence completely changed."</p>
-<br><b>Priya Reddy · Madhapur</b>
+<br>
+<b>Priya Reddy · Madhapur</b>
 </div>
+
 <div class="review">
 <h3>⭐⭐⭐⭐⭐</h3>
 <p>"The daily WhatsApp check-ins made all the difference. You don't get this dedication anywhere else."</p>
-<br><b>Anitha Sharma · Jubilee Hills</b>
+<br>
+<b>Anitha Sharma · Jubilee Hills</b>
 </div>
 </div>
 </section>
 
-<!-- SERVICE AREA — 5 KM RADIUS -->
 <section>
 <h2 class="title">SERVICE AREA</h2>
-<p class="sub">Coach Koti travels directly to your home — covering all areas within 5 km of Gajularamaram</p>
-
-<div class="service-area-wrap">
-<div class="service-area-map">
-<div class="center-pin">
-<span class="pin-icon">📍</span>
-<h3>Gajularamaram</h3>
-<p>Base Location — Coach Koti's Home Zone</p>
-<div class="radius-badge">🔵 5 KM COVERAGE RADIUS</div>
-</div>
-</div>
-<div class="area-tags">
-<span class="area-tag">📍 Miyapur</span>
-<span class="area-tag">📍 Kukatpally</span>
-<span class="area-tag">📍 Pragathi Nagar</span>
-<span class="area-tag">📍 BHEL Colony</span>
-<span class="area-tag">📍 Bachupally</span>
-<span class="area-tag">📍 Nizampet</span>
-<span class="area-tag">📍 Suraram</span>
-<span class="area-tag">📍 Jeedimetla</span>
-</div>
-<p style="color:#6b7280;font-size:13px;margin-top:20px">📞 Not sure if your area is covered? WhatsApp Coach Koti to confirm.</p>
+<p class="sub">Coach Koti Comes Directly To You</p>
+<div class="grid features">
+<div class="card">📍 Gajularamaram</div>
+<div class="card">📍 Miyapur</div>
+<div class="card">📍 Kukatpally</div>
+<div class="card">📍 Madhapur</div>
+<div class="card">📍 Kondapur</div>
+<div class="card">📍 Jubilee Hills</div>
+<div class="card">📍 Banjara Hills</div>
+<div class="card">📍 Pragathi Nagar</div>
 </div>
 </section>
 
-<!-- CONTACT — No personal details shown -->
 <section id="contact">
 <h2 class="title">Apply Now — Are You Ready To Transform?</h2>
-<p class="sub">Fill in your details and you'll be connected to Coach Koti on WhatsApp instantly.</p>
+<p class="sub">Real Effort Creates Real Transformation.</p>
 
 <div class="card">
-<div style="display:grid;gap:18px">
-<input type="text" id="fname" placeholder="FULL NAME" style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff;width:100%">
-<input type="number" id="fage" placeholder="AGE" style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff;width:100%">
-<input type="text" id="floc" placeholder="LOCATION IN HYDERABAD" style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff;width:100%">
-<textarea id="fgoal" placeholder="FITNESS GOALS" rows="6" style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff;width:100%"></textarea>
-<button onclick="submitToWhatsApp()" style="padding:18px;border:none;border-radius:12px;background:#22c55e;color:#fff;font-size:18px;font-weight:700;cursor:pointer">✅ APPLY NOW — CONNECT ON WHATSAPP</button>
+<form style="display:grid;gap:18px">
+<input type="text" placeholder="FULL NAME" style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff">
+<input type="number" placeholder="AGE" style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff">
+<input type="text" placeholder="LOCATION IN HYDERABAD" style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff">
+<textarea placeholder="FITNESS GOALS" rows="6" style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff"></textarea>
+<button type="submit" style="padding:18px;border:none;border-radius:12px;background:#22c55e;color:#fff;font-size:18px;font-weight:700">✅ APPLY NOW — SUBMIT</button>
+</form>
 </div>
-</div>
+
 </section>
 
 <section id="payments">
 <h2 class="title">PAYMENT OPTIONS</h2>
 <p class="sub">Secure & Easy Payments — UPI, PhonePe, Google Pay & Cards Accepted</p>
+
 <div class="payment-grid">
 <div class="payment-card">
 <h3>📱 UPI / PhonePe</h3>
@@ -286,6 +329,7 @@ UPI ID:<br><br>
 PhonePe Accepted ✅
 </div>
 </div>
+
 <div class="payment-card">
 <h3>💳 Card Payments</h3>
 <p>Debit Card & Credit Card payments accepted for all fitness plans.</p>
@@ -294,11 +338,12 @@ Visa • MasterCard • RuPay<br><br>
 Online Transfer Available ✅
 </div>
 </div>
+
 <div class="payment-card">
 <h3>🏦 Bank Transfer</h3>
 <p>Direct bank transfer also available after booking confirmation.</p>
 <div class="qr-box">
-Message Coach Koti on WhatsApp<br><br>
+WhatsApp Coach Koti<br><br>
 For Account Details ✅
 </div>
 </div>
@@ -306,41 +351,33 @@ For Account Details ✅
 </section>
 
 <footer>
+
 <h2 style="color:#22c55e">HOME NATURAL FITNESS</h2>
 <p>15 years of natural fitness excellence by Coach Koti.</p>
 <br>
-<p>📍 Hyderabad, Telangana — Serving 5 km around Gajularamaram</p>
+<p>💬 WhatsApp: 8074032389</p>
+<p>📬 homefitnessnatural38@gmail.com</p>
+<p>📍 Hyderabad, Telangana</p>
 <br>
 <p>© 2026 Home Natural Fitness. All rights reserved.</p>
 </footer>
 
 <script>
-function submitToWhatsApp(){
-  var name = document.getElementById('fname').value.trim();
-  var age  = document.getElementById('fage').value.trim();
-  var loc  = document.getElementById('floc').value.trim();
-  var goal = document.getElementById('fgoal').value.trim();
-  if(!name){alert('Please enter your full name');return;}
-  var msg = "Hi Coach Koti! I want to start my fitness journey 🙏\n\n"
-    + "👤 Name: " + name + "\n"
-    + "🎂 Age: " + (age||'Not provided') + "\n"
-    + "📍 Location: " + (loc||'Not provided') + "\n"
-    + "🎯 Goals: " + (goal||'Not provided');
-  var url = "https://wa.me/918074032389?text=" + encodeURIComponent(msg);
-  window.open(url, '_blank');
+function setTelugu(){
+document.getElementById('mainTitle').innerHTML='జిమ్ కాదు. సప్లిమెంట్స్ కాదు. <span style="color:#22c55e">నిజమైన ఫలితాలు.</span>';
+document.getElementById('mainText').innerHTML='జిమ్ మీద ఆధారపడకుండా… అనవసరమైన సప్లిమెంట్స్ లేకుండా… నిజమైన క్రమశిక్షణతో ఫిట్‌నెస్ మార్పు.';
 }
 
-function setTelugu(){
-  document.getElementById('mainTitle').innerHTML='జిమ్ కాదు. సప్లిమెంట్స్ కాదు. <span style="color:#22c55e">నిజమైన ఫలితాలు.</span>';
-  document.getElementById('mainText').innerHTML='జిమ్ మీద ఆధారపడకుండా… అనవసరమైన సప్లిమెంట్స్ లేకుండా… నిజమైన క్రమశిక్షణతో ఫిట్‌నెస్ మార్పు.';
-}
-function setEnglish(){
-  document.getElementById('mainTitle').innerHTML='No Gym. No Supplements. <span style="color:#22c55e">Real Results.</span>';
-  document.getElementById('mainText').innerHTML='Natural transformation through discipline, home training, and consistency.';
-}
 function toggleMenu(){
-  document.getElementById('menu').classList.toggle('show');
+document.getElementById('menu').classList.toggle('show');
+}
+
+function setEnglish(){
+
+document.getElementById('mainTitle').innerHTML='No Gym. No Supplements. <span style="color:#22c55e">Real Results.</span>';
+document.getElementById('mainText').innerHTML='Natural transformation through discipline, home training, and consistency.';
 }
 </script>
+
 </body>
 </html>
