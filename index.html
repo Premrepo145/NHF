@@ -437,13 +437,36 @@ style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff
 <option>🏠 Family Health Plan — ₹19,999</option>
 </select>
 
-<select id="payment"
-style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff">
-<option value="">💳 SELECT PAYMENT METHOD</option>
-<option>📱 UPI / PhonePe</option>
-<option>💳 Debit / Credit Card</option>
-<option>🏦 Bank Transfer</option>
-</select>
+<div style="background:#17211d;padding:25px;border-radius:15px;text-align:center;">
+
+<h3 style="color:#22c55e;margin-bottom:15px;">
+📱 Scan & Pay Trial Fee
+</h3>
+
+<img src="phonepe-qr.jpeg">
+alt="UPI QR Code"
+style="
+width:250px;
+max-width:100%;
+background:white;
+padding:10px;
+border-radius:15px;
+">
+
+<p style="margin-top:15px;color:#d1d5db;">
+Scan with PhonePe, Google Pay, Paytm or any UPI App
+</p>
+
+<p style="font-size:18px;color:#22c55e;font-weight:700;">
+UPI ID: 8074032389@ybl
+</p>
+
+<label style="display:block;margin-top:15px;">
+<input type="checkbox" id="paid">
+ I Have Completed The Payment ✅
+</label>
+
+</div>
 
 <textarea id="goal" placeholder="FITNESS GOALS" rows="6"
 style="padding:16px;border-radius:12px;border:none;background:#17211d;color:#fff"></textarea>
@@ -455,45 +478,7 @@ style="padding:18px;border:none;border-radius:12px;background:#22c55e;color:#fff
 
 </form>
 </div>
-
-
 </section>
-
-<section id="payments">
-<h2 class="title">PAYMENT OPTIONS</h2>
-<p class="sub">Secure & Easy Payments — UPI, PhonePe, Google Pay & Cards Accepted</p>
-
-<div class="payment-grid">
-<div class="payment-card">
-<h3>📱 UPI / PhonePe</h3>
-<p>Pay instantly using PhonePe, Google Pay, Paytm or any UPI app.</p>
-<div class="qr-box">
-UPI ID:<br><br>
-<b>8074032389@ybl</b><br><br>
-PhonePe Accepted ✅
-</div>
-</div>
-
-<div class="payment-card">
-<h3>💳 Card Payments</h3>
-<p>Debit Card & Credit Card payments accepted for all fitness plans.</p>
-<div class="qr-box">
-Visa • MasterCard • RuPay<br><br>
-Online Transfer Available ✅
-</div>
-</div>
-
-<div class="payment-card">
-<h3>🏦 Bank Transfer</h3>
-<p>Direct bank transfer also available after booking confirmation.</p>
-<div class="qr-box">
-WhatsApp Coach Koti<br><br>
-For Account Details ✅
-</div>
-</div>
-</div>
-</section>
-
 <footer>
 
 <h2 style="color:#22c55e">HOME NATURAL FITNESS</h2>
@@ -530,7 +515,6 @@ let name = document.getElementById("name").value;
 let age = document.getElementById("age").value;
 let location = document.getElementById("location").value;
 let plan = document.getElementById("plan").value;
-let payment = document.getElementById("payment").value;
 let goal = document.getElementById("goal").value;
 
 let message =
@@ -539,7 +523,10 @@ let message =
 "🎂 Age: " + age + "\n" +
 "📍 Location: " + location + "\n" +
 "🏆 Plan: " + plan + "\n" +
-"💳 Payment Method: " + payment + "\n" +
+if(!document.getElementById("paid").checked){
+alert("Please complete payment and tick the checkbox.");
+return;
+}
 "🎯 Goal: " + goal;
 
 window.open(
